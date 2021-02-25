@@ -35,16 +35,24 @@ function showCart() {
 
   let cartDisplay = document.querySelector('tbody');
   
+  let tr = document.createElement('tr');
+  let td = document.createElement('td');
 
+  for (var i = 0; i < cart.length; i++) {
+    td.textContent = cart(i);
+    cartDisplay.appendChild(tr);
+  }
+  tr.appendChild(td);
 }
 
 function removeItemFromCart(event) {
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-
+  
   // TODO: Save the cart back to local storage
   
   // TODO: Re-draw the cart table
+
 
 }
 

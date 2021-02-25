@@ -52,7 +52,7 @@ function addSelectedItemToCart() {
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
 
-  for (let i = 0; i < cart.length; i++){
+  for (var i = 0; i < cart.length; i++){
     let counter = 0;
     counter += parseInt(cart[i].quantity);
 
@@ -70,7 +70,7 @@ function updateCartPreview() {
   let previewItem = document.querySelector('label span:first-child');
   let previewQuant = document.querySelector('label span:nth-child(2)');
 
-  for (let i = 0; i < cart.length; i++){
+  for (var i = 0; i < cart.length; i++){
     let cartElement = document.createElement('td');
     cartElement.textContent = cart[i].item;
     previewItem.appendChild(cartElement);
