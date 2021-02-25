@@ -1,1 +1,41 @@
 /* TODO: Make it awesome */
+header {
+  margin: 40px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body {
+  background-color :lightblue;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+nav li:hover {
+  background-color: royalblue;
+}
+
+#catalog {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+footer {
+  height: 100px;
+  margin-top: 30px;
+}
