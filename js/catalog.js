@@ -4,7 +4,9 @@
 
 // Set up an empty cart for use on this page.
 let cart = new Cart([]);
-let 
+let previewItem = document.querySelector('label span:first-child');
+let previewQuant = document.querySelector('label span:nth-child(2)');
+
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
 function populateForm() {
@@ -51,15 +53,17 @@ function addSelectedItemToCart() {
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {
-
-  for (var i = 0; i < cart.length; i++){
-    let counter = 0;
-    counter += parseInt(cart[i].quantity);
-
-    
-
-    
+  let counter = 0;
+  for (var i in cart.items) {
+    counter += parseInt(cart.items[i].quantity);
   }
+  document.getElementById('itemCount').textContent = `: ${counter} item(s) in cart`;
+
+ 
+  // for (var i = 0; i < cart.items.length; i++){
+  //   let counter = 0;
+  //   counter += parseInt(cart[i].quantity);
+  // }
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
@@ -67,13 +71,13 @@ function updateCartPreview() {
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 
-  let previewItem = document.querySelector('label span:first-child');
-  let previewQuant = document.querySelector('label span:nth-child(2)');
+
 
   for (var i = 0; i < cart.length; i++){
     let cartElement = document.createElement('td');
     cartElement.textContent = cart[i].item;
     previewItem.appendChild(cartElement);
+
   }
 
 }

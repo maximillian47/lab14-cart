@@ -5,7 +5,7 @@
 var table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 var cart;
-
+// let myContainer = document.querySelector('copy');
 
 function loadCart() {
   var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
@@ -33,14 +33,15 @@ function showCart() {
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
-  let cartDisplay = document.querySelector('tbody');
+  let cartContainer = document.querySelector('cart');
   
   let tr = document.createElement('tr');
+
   let td = document.createElement('td');
 
   for (var i = 0; i < cart.length; i++) {
-    td.textContent = cart(i);
-    cartDisplay.appendChild(tr);
+    td.textContent = cart[i];
+    cartContainer.appendChild(tr);
   }
   tr.appendChild(td);
 }
@@ -52,7 +53,7 @@ function removeItemFromCart(event) {
     let itemClicked = event.target.title;
 
     if (event.target === table) {
-      
+
     }
   }
   // TODO: Save the cart back to local storage
