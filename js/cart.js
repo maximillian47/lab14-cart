@@ -48,11 +48,18 @@ function showCart() {
 function removeItemFromCart(event) {
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  
-  // TODO: Save the cart back to local storage
-  
-  // TODO: Re-draw the cart table
+  function handleClick(event) {
+    let itemClicked = event.target.title;
 
+    if (event.target === table) {
+      
+    }
+  }
+  // TODO: Save the cart back to local storage
+  let stringifiedItems = JSON.stringify(cart);
+  localStorage.setItem('items', stringifiedItems);
+  // TODO: Re-draw the cart table
+  rendershowCart();
 
 }
 
