@@ -27,26 +27,35 @@ function clearCart() {
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
-
+  let tbody = table.children[1]; 
+  let items = cart.items;
+  console.log(cart);
   // TODO: Find the table body
   // TODO: Iterate over the items in the cart
   // TODO: Create a TR
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
-  let tr = document.createElement('tr');
-  let td = document.createElement('td');
-  td.textContent = 'delete';
-  td.textContent = 'quantity';
-  td.textContent = 'item';
-  tr.appendChild(td);
+  // let tr = document.createElement('tr');
+  // let td = document.createElement('td');
+  // td.textContent = 'delete';
+  // td.textContent = 'quantity';
+  // td.textContent = 'item';
+  // tr.appendChild(td);
   
-  for (var i = 0; i < cart.length; i++) {
-    td.textContent = cart[i];
-    
-    cartBody.appendChild(tr);
+  for (let i = 0; i < items.length; i++) {
+    let tr = document.createElement('tr');
+    let td = document.createElement('td');
+    td.textContent = 'X';
+    tr.appendChild(td);
+    td = document.createElement('td');
+    td.textContent = items[i].quantity;
+    tr.appendChild(td);
+    td = document.createElement('td');
+    td.textContent = items[i].product;
+    tr.appendChild(td);
+    tbody.appendChild(tr);
   }
-  tr.appendChild(td);
 }
 
 function removeItemFromCart(event) {
