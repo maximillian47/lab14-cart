@@ -5,6 +5,7 @@
 var table = document.getElementById('cart');
 table.addEventListener('click', removeItemFromCart);
 var cart;
+let cartContainer = document.querySelectorAll('cart');
 // let myContainer = document.querySelector('copy');
 
 function loadCart() {
@@ -33,15 +34,17 @@ function showCart() {
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 
-  let cartContainer = document.querySelector('cart');
-  
   let tr = document.createElement('tr');
-
   let td = document.createElement('td');
-
+  td.textContent = 'delete';
+  td.textContent = 'quantity';
+  td.textContent = 'item';
+  tr.appendChild(td);
+  
   for (var i = 0; i < cart.length; i++) {
     td.textContent = cart[i];
-    cartContainer.appendChild(tr);
+    
+    cartBody.appendChild(tr);
   }
   tr.appendChild(td);
 }
